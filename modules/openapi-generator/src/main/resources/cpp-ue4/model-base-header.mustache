@@ -54,6 +54,7 @@ public:
 	virtual ~Request() {}
 	virtual void SetupHttpRequest(const FHttpRequestRef& HttpRequest) const = 0;
 	virtual FString ComputePath() const = 0;
+	virtual FString GetOperationId() const = 0;
 
 	/* Enables retry and optionally sets a retry policy for this request */
 	void SetShouldRetry(const HttpRetryParams& Params = HttpRetryParams()) { RetryParams = Params; }

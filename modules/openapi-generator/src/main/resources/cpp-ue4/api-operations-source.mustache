@@ -124,6 +124,11 @@ FString {{classname}}::{{operationIdCamelCase}}Request::ComputePath() const
 	return Path;
 }
 
+FString {{classname}}::{{operationIdCamelCase}}Request::GetOperationId() const
+{
+	return FString(TEXT("{{operationIdCamelCase}}"));
+}
+
 void {{classname}}::{{operationIdCamelCase}}Request::SetupHttpRequest(const FHttpRequestRef& HttpRequest) const
 {
 	static const TArray<FString> Consumes = { {{#consumes}}TEXT("{{{mediaType}}}"){{^-last}}, {{/-last}}{{/consumes}} };
